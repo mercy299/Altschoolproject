@@ -9,7 +9,6 @@ resource "kubernetes_config_map" "nginx_config" {
                   listen 80;
 
                   location / {
-                    proxy_set_header Host $host;
                     proxy_pass http://dalle-client-service:8000;
                   }
                   location /api {
