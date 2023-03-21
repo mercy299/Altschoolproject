@@ -8,6 +8,8 @@ resource "kubernetes_config_map" "nginx_config" {
                 server {
                   listen 80;
 
+                  client_max_body_size 200M;
+
                   location / {
                     proxy_pass http://dalle-client-service:8000;
                   }
